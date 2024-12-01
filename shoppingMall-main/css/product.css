@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f2ee;
+}
+.main{
+    padding: 75px;
+}
+.left-panel{
+    display: flex;
+}
+.left{
+    width: 25%;
+    padding-left: 30px;
+}
+.right{
+    width: 80%;
+}
+.left ul{
+    margin: 0px;
+    padding-left: 30px;
+}
+.left div{
+    margin-top: 20px;
+}
+.category{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0px;
+    text-transform: uppercase;
+}
+.subCat a{
+    text-decoration: none;
+}
+.subCat li{
+    list-style: none;
+    color: #b7b7b7;
+    line-height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.subCat li:hover{
+    color: #5F7B94;
+}
+#right-panel{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 35px;
+}
+
+#right-panel .card{
+    height: 370px;
+    width: 240px;
+    background-color: white;
+    transition: box-shadow 0.2s ease-out;
+}
+#right-panel .card:hover{
+    box-shadow: 3px 3px 15px #a9bbcc;
+}
+#right-panel a{
+    text-decoration: none;
+    color: black;
+}
+.card{
+    text-align: center;
+}
+.card .details{
+    text-align: center;
+    justify-content: center;
+}
+.card .details .brand{
+    color: #b7b7b7;
+    font-size: 12px;
+}
+.card .details .pname{
+    font-size: 14px;
+}
+#cat-head{
+    margin-left: 304px;
+    font-size: 24px;
+    padding-bottom: 20px;
+    color: #155d9d;
+    color: black;
+}
+#pagination{
+    text-align: center;
+    margin-top: 40px;
+}
+#pagination-controls button{
+    padding: 10px 15px;
+    background-color: #94a9bc;
+    border: 1px solid #9dbcd6;
+    color: white;
+}
+
+
+
+
+/* productPreview.html */
+#product-preview{
+    display: flex;
+    width: 60%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: white;
+    padding: 40px;
+}
+#product-preview .left-sec {
+    margin: auto;
+}
+#product-preview .left-sec img{
+    height: 420px;
+    width: 315px;
+}
+#product-preview #right-sec{
+    margin-left: 54px;
+    margin-top: 44px;
+}
+#product-preview .brand{
+    color: #4b78a0;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 1000;
+}
+#product-preview .name{
+    margin: 0px;
+    font-size: 39px;
+    font-weight: 700;
+    margin-top: 13px;
+}
+#product-preview .desc{
+    line-height: 28px;
+    color: gray;
+    margin-top: 24px;
+}
+#product-preview .price{
+    margin-top: 26px;
+    color: black;
+    font-size: 2rem;
+    font-weight: 1000;
+}
+#product-preview .size{
+    margin-top: 9px;
+    margin-bottom: 15px;
+}
+#product-preview .size button{
+    margin-top: 9px;
+    height: 34px;
+    width: 40px;
+    background-color: #94a9bc;
+    border: 1px solid #9dbcd6;
+    color: white;
+    background-color: #dae2e8;
+    border: 1px solid #dae2e8;
+    color: black;
+    cursor: pointer;
+}
+#product-preview .quantity{
+    display: inline;
+    margin-left: 12px;
+}
+#product-preview .quantity button{
+    height: 44px;
+    width: 45px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #dae2e8;
+    border: 1px solid #dae2e8;
+    color: black;
+}
+#product-preview .quantity input{
+    height: 45px;
+    width: 48px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid gray;
+}
+.AddToCart{
+    height: 50px;
+    margin-left: 40px;
+    width: 197px;
+    background-color: #94a9bc;
+    border: 1px solid #94a9bc;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    
+}
+
+
+
+
+
+/* ------cart page-------------- */
+.cart-main{
+    display: flex;
+    gap: 20px;
+    margin: 35px 200px;
+    background-color: white;
+    padding: 20px;
+}
+#cart-left-sec{
+    width: 65%;
+}
+#cart-left-sec .block{
+    display: flex;
+    border: 1px solid rgb(209, 207, 207);
+    border-radius: 7px;   
+    padding: 22px 22px 0px 22px
+}
+#cart-left-sec .block img{
+    height: 100px;
+    width: 90px;
+    margin-right: 15px;
+}
+#cart-right-sec{
+    border: 1px solid rgb(209, 207, 207);
+    border-radius: 7px; 
+    width: 35%;
+}
+#cart-left-sec .quantity{
+    display: inline;
+}
+#cart-left-sec .quantity button{
+    height: 27px;
+    width: 28px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #dae2e8;
+    border: 1px solid #dae2e8;
+    color: black;
+}
+#cart-left-sec .quantity input{
+    height: 28px;
+    width: 31px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid gray;
+}
+#cart-left-sec .details .name{
+    font-size: 15px;
+    font-weight: 500;
+}
+#cart-left-sec .details .price{
+    position: relative;
+    top: -21px;
+    font-weight: 500;
+    left: 430px;
+}
+#cart-left-sec .details .brand{
+    position: relative;
+    top: -18px;
+    color: gray;
+    font-size: 14px;
+}
+#cart-left-sec .details .remove{
+    position: relative;
+    cursor: pointer;
+    right: -460px;
+    top: -15px;
+    color: red;
+    font-size: 14px;
+}
+#cart-right-sec{
+    padding: 24px;
+    height: 335px;
+}
+#cart-right-sec #order{
+    display: flex;
+    border-bottom: 1px solid rgb(206, 202, 202);
+}
+#order #total-head{
+    width: 50%;
+}
+#order #total{
+    position: relative;
+    text-align: right;
+    width: 50%;
+}
+#order #total-head p{
+    margin: 14px;
+}
+#order #total p{
+    margin: 14px;
+}
+#f-total{
+    text-align: right;
+    margin: 14px;
+}
+
+
+
+/* --------------Confirm Page------------ */
+#confirm{
+    background-color:#dae2e8;
+    width: 30%;
+    padding: 30px;
+    margin: 72px auto;
+
+}
+#confirm .thank{
+    font-size: 35px;
+    margin: 0px;
+    text-align: center;
+}
+#confirm .details{
+    font-size: 14px;
+    line-height: 24px;
+    color: #605e5e;
+    text-align: center;
+    margin-top: 24px;
+}
+#confirm .back{
+   text-align: center;
+   margin: 23px 0px 0px;
+   color: #040466;
+   cursor: pointer;
+   font-size: 14px;
+}
+#confirm span{
+    content: "\f00c";
+    background-color: #6087a4;
+    border-radius: 50%;
+    padding: 1px 6px;
+    font-size: 28px;
+    color: white;
+}
+
+
+
+

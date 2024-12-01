@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Sign-Up Form Styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .signup-container {
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: skyblue;
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #6ed0c0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ab0993;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .signup-container {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="#" method="post" class="signup-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password"
+                required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('.signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password }),
+                });
+
+                const result = await response.json();
+                alert(result.message);  // Display the message from backend
+
+                // If sign up is successful, redirect to login page
+                if (result.success) {
+                    window.location.href = 'login.html'; // Redirect to login page
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Sign-Up failed. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>

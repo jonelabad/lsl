@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Mall</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <section class="navbar">
+        <nav>
+            <div style=" display: flex;align-items: center;">
+                <a href="index.html">
+                    <div id="logo">QuickMart</div>
+                </a>
+            </div>
+
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html?category=3">Fashion</a></li>
+                    <li><a href="products.html?category=4">Beauty</a></li>
+                    <li><a href="products.html?category=5">Decor</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="right-sec">
+                <div>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div>
+                    <a href="login.html" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i><a>
+                </div>
+
+                <div id="iconDropdown">
+                    <i class="fas fa-user"> </i>
+
+                    <div id="iconDropdownContent">
+                        <a href="login.html">Login</a>
+                        <a href="signup.html">SignUp</a>
+                        <a href="profile.html">Profile</a>
+                        <a href="logout.html">Logout</a>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </section>
+    <p style="text-align: center;margin: 34px 0px;font-size: 26px;">Your Shopping Cart</p>
+    <section class="cart-main">
+        <div id="cart-left-sec">
+           
+            
+        </div>
+        <div id="cart-right-sec">
+            <p style="text-align: center;font-size: 18px;font-weight: 600;margin-bottom: 25px;">Order Summary</p>
+            <div id="order">
+                <div id="total-head">
+                    <p>Sub Total</p>
+                    <p>Shipping</p>
+                    <p>Tax</p>
+                </div>
+                <div id="total">
+                    <p id="cart-total">0</p>
+                    <p style="color: gray;font-size: 13px;">Free Shipping</p>
+                    <p>₹ 0</p>
+                </div>
+            </div>
+            <div id="f-total">
+                <p id="final-total"></p>
+            </div>
+            <div style="text-align: center;">
+                <a href="confirm.html"><button onclick="confirmOrder()" style="height: 45px;width: 100%;margin: 34px 0px;background-color: #dae2e8;border: 1px solid #dae2e8;cursor: pointer;font-size: 14px;">Proceed to Checkout</button>
+            </div></a>
+        </div>
+        
+
+    </section>
+    
+    <script src="js/data/category.js"></script>
+    <script src="js/data/products.js"></script>
+    <script src="js/services/cart.js"></script>
+</body>
+</html>

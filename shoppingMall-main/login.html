@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .login-container {
+      background-color: #67e0e0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input:focus {
+      border-color: skyblue;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #6ed0c0;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ab0993;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .login-container {
+        width: 90%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form class="login-form">
+      <label for="uname">Username</label>
+      <input type="text" id="uname" name="uname" placeholder="Enter your username" required>
+
+      <label for="psw">Password</label>
+      <input type="password" id="psw" name="psw" placeholder="Enter your password" required>
+
+      <button type="submit">Login</button>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </form>
+  </div>
+  <script>
+    document.querySelector('.login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('uname').value;
+      const password = document.getElementById('psw').value;
+      const rememberMe = document.querySelector('input[name="remember"]').checked;
+
+      try {
+        const response = await fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+
+        const result = await response.json();
+        alert(result.message);
+
+        if (result.success) {
+          if (rememberMe) {
+            // Save username in localStorage if "Remember me" is checked
+            localStorage.setItem('username', username);
+          }
+          window.location.href = 'index.html'; // Redirect to the home page
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Login failed. Please try again.');
+      }
+    });
+  </script>
+</body>
+
+</html>
